@@ -1,0 +1,5 @@
+# Odoo Modules
+odoo14-addon-contacts
+odoo14-addon-point_of_sale
+
+# No external Python library required.

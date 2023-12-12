@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ClientListScreenInherit" t-inherit="point_of_sale.ClientListScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//table[hasclass('client-list')]/thead/tr" position="inside">
+            <th style="width: 15%;">Customer Type</th>
+        </xpath>
+    </t>
+
+    <t t-name="ClientLineInherit" t-inherit="point_of_sale.ClientLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr" position="inside">
+            <td>
+<!--                <t t-if="props.partner.customer_type" t-esc="props.partner.customer_type_label"/>-->
+                <t t-if="props.partner.customer_type == 'potential'">Potential</t>
+                <t t-elif="props.partner.customer_type == 'loyal'">Loyal</t>
+                <t t-elif="props.partner.customer_type == 'impulse'">Impulse</t>
+            </td>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<!-- add disable_numpad fields in res_users view -->
+	<record id="res_users_form_inherit_pos" model="ir.ui.view">
+		<field name="name">res.users.form.inherit.pos</field>
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//notebook/page[@name='access_rights']" position="after">
+				<page name="pos" string="Point Of Sale">
+					<group>
+						<field name="disable_numpad"/>
+					</group>
+				</page>
+			</xpath>
+		</field>
+	</record>
+</odoo>
