@@ -6,7 +6,7 @@ odoo.define('pos_customisation.product_screen', function(require){
     const { patch } = require('web.utils');
     var models = require('point_of_sale.models');
     models.load_fields('res.users','disable_numpad');
-    patch(components.ProductScreen, 'customer', {
+    patch(components.ProductScreen, 'product_screen', {
         mounted() {
             if (this.env.pos.user.disable_numpad) {
                 $('.pads').hide();   // For hide the number pad only, use "$('.numpad').hide();"
